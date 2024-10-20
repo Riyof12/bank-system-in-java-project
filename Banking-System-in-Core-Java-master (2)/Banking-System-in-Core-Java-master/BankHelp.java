@@ -5,6 +5,20 @@ import java.net.MalformedURLException;
 import java.io.*;
 import javax.swing.text.*;
 import javax.swing.event.*;
+/**
+ * BankHelp is a JInternalFrame that displays an HTML file in a scrollable view.
+ * It uses JEditorPane to render the HTML content and allows for hyperlink navigation.
+ * 
+ * The constructor takes a title and a filename for the HTML file to display.
+ * 
+ * The HtmlPane class extends JScrollPane and implements HyperlinkListener to handle 
+ * hyperlink events. When a link is activated, it updates the displayed content 
+ * asynchronously to avoid blocking the UI thread, using a Cursor to indicate loading.
+ * 
+ * The PageLoader inner class is responsible for loading the new page in the JEditorPane.
+ * It sets the cursor to a wait cursor while loading and restores the original cursor 
+ * after loading is complete or if an error occurs.
+ */
 
 public class BankHelp extends JInternalFrame {
 
